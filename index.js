@@ -6,4 +6,32 @@ $(document).ready(
         console.log(nome);
         console.log(id);
     }
-)
+);
+
+    $.ajax(                         {  
+        url:"http://jsonplaceholder.typicode.com/posts",
+        type:"GET",
+        success:function(data){ 
+            console.log(data);
+            $.each(
+                data,
+                function(i,item){ 
+                    $('#resultado').append(
+                     `<li><a href="./doido.html?id=`+item.id+`>abre</a></li>`
+                 
+                    )
+                 
+                }
+                )
+            
+         },
+         error:function(data){}
+     }
+    )
+
+ 
+ 
+
+
+ 
+ 

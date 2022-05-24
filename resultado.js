@@ -1,5 +1,8 @@
 $(document).ready(
     function(){ 
+
+        var Params = new URLSearchParams(location.search);
+        var id = Params.get("id");
        $.ajax({ 
            url:"http://jsonplaceholder.typicode.com/posts",
            type:"GET",
@@ -9,7 +12,7 @@ $(document).ready(
                    data,
                    function(i,item){ 
                        $('#resultado').append(
-                        '<li><a href="./resultado.html?opcao=a">'+item.title+'</a></li>'
+                        '<li><a href="./doido.html?id='+item.id+'">pagina</a></li>'
                     
                        )
                     
